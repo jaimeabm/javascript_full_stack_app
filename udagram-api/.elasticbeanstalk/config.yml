@@ -1,6 +1,6 @@
 branch-defaults:
   default:
-    environment: Udagrams-env
+    environment: Udagram-env
 deploy:
   artifact: www/Archive.zip
 environment-defaults:
