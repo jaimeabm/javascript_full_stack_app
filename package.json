@@ -6,7 +6,8 @@
         "frontend:install": "cd udagram-frontend && npm install && cd ..",
         "backend:install": "cd udagram-api && npm install && cd ..",
         "frontend:build": " export NODE_OPTIONS=--openssl-legacy-provider && cd udagram-frontend && rm -fr ./www && npm run buildProd && cd ..",
-        "backend:build": "cd udagram-api && npm run build && cd .."
+        "backend:build": "cd udagram-api && npm run build && cd ..",
+        "frontend:deploy": "cd udagram-frontend && npm run deploy && cd .."
     },
     "repository": {
       "type": "git",
