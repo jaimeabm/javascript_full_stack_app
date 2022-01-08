@@ -1,0 +1,25 @@
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
+version: 2.1
+orbs:
+  node: circleci/node@4.2.0
+  aws-cli: circleci/aws-cli@2.0.0
+jobs:
+  frontend:
+    working_directory: ~/app/udagram-frontend
+    executor: node/default
+    steps:
+      - checkout:
+          path: ~/app
+      - node/install-packages:
+          app-dir: ~/app/udagram-frontend
+      - run:
+          name: Build Frontend
+          command: npm run build
+      - aws-cli/install
+      - run:
+          name: Deploy Frontend
+          command: aws s3 cp --recursive --acl public-read ./www $jaimeabmudagram
+workflows:
+  build_and_deploy:
+    jobs:
+      - frontend
