@@ -4,7 +4,7 @@
     "description": "Final udacity project",
     "scripts": {
         "frontend:install": "cd udagram-frontend && npm install && cd ..",
-        "frontend:test": "cd udagram-frontend && npm run test && cd ..",
+        "frontend:test": "export NODE_OPTIONS=--openssl-legacy-provider && cd udagram-frontend && npm run test && cd ..",
         "backend:install": "cd udagram-api && npm install && cd ..",
         "frontend:build": " export NODE_OPTIONS=--openssl-legacy-provider && cd udagram-frontend && rm -fr ./www && npm run buildProd && cd ..",
         "backend:build": "cd udagram-api && npm run build && cd ..",
